@@ -1,0 +1,142 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>时空隧道</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="生成一个时空穿梭机" />
+    <meta name="renderer" content="webkit" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <style>
+      body {
+        background-color: #25272c;
+        display: grid;
+        place-items: center;
+        height: 100vh;
+      }
+      .container {
+        border-radius: 4px;
+        background: #000;
+        height: 320px;
+        width: 320px;
+        overflow: hidden;
+        display: grid;
+        position: relative;
+        place-items: center;
+      }
+      .container::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url(https://img.alicdn.com/imgextra/i3/O1CN01GTvvno1H0MCCCbo8P_!!6000000000695-2-tps-480-480.png);
+        mix-blend-mode: hard-light;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        z-index: 0;
+      }
+      .container::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url(https://img.alicdn.com/imgextra/i3/O1CN01kslCoF1DTtGv41upC_!!6000000000218-2-tps-480-480.png);
+        mix-blend-mode: hard-light;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        z-index: 99;
+        animation: breathe 4s ease-in-out infinite;
+      }
+      .box {
+        opacity: 0;
+        position: absolute;
+        width: 80px;
+        height: 80px;
+        background: url(https://img.alicdn.com/imgextra/i1/O1CN01vxsZLR29ilr5joNgK_!!6000000008102-2-tps-480-480.png)
+          center center / cover no-repeat;
+        --delay: 1s;
+        animation: grow 6s linear infinite;
+        animation-delay: var(--delay);
+      }
+      .box:nth-child(2) {
+        --delay: 2s;
+      }
+      .box:nth-child(3) {
+        --delay: 3s;
+      }
+      .box:nth-child(4) {
+        --delay: 4s;
+      }
+      .box:nth-child(5) {
+        --delay: 5s;
+      }
+      .box:nth-child(6) {
+        --delay: 6s;
+      }
+      @keyframes grow {
+        from {
+          opacity: 0;
+          transform: scale(0);
+        }
+        to {
+          opacity: 1;
+          transform: scale(6);
+        }
+      }
+      @keyframes breathe {
+        0% {
+          opacity: 0.2;
+          transform: scale(0.9);
+        }
+        50% {
+          opacity: 1;
+          transform: scale(1);
+        }
+        100% {
+          opacity: 0.2;
+          transform: scale(0.9);
+        }
+      }
+      @keyframes space-float {
+        0% {
+          transform: translate(-50%, -50%) rotate(0deg);
+        }
+        50% {
+          transform: translate(-45%, -45%) rotate(10deg);
+        }
+        100% {
+          transform: translate(-50%, -50%) rotate(-10deg);
+        }
+      }
+      .space-image {
+        scale: 0.5;
+        position: absolute;
+        top: 40%;
+        left: 40%;
+        width: 100%;
+        max-width: 600px;
+        animation: space-float 6s linear infinite;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <img
+        class="space-image"
+        src="https://img.alicdn.com/imgextra/i2/O1CN01Ugyc351IlMSZjfngg_!!6000000000933-2-tps-1209-1071.png"
+        alt="Image"
+      />
+    </div>
+  </body>
+</html>
