@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>黑客背景页面</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000;
+            background-image: radial-gradient(circle at top left, #3a3d40, #1b1e20), linear-gradient(45deg, #4f4c4c 25%, transparent 25%, transparent 75%, #4f4c4c 75%, #4f4c4c), url('https://example.com/path-to-your-hacker-background-image.jpg');
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: multiply;
+            overflow: hidden;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .hacker-text {
+            color: #fff;
+            text-align: center;
+            animation: flickerText 5s infinite;
+        }
+        @keyframes flickerText {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+        h1 {
+            font-size: 4em;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="hacker-text">
+        <h1>Welcome to the Matrix...</h1>
+    </div>
+</body>
+</html>
